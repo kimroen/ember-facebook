@@ -71,7 +71,7 @@
     init: ->
       @_super()
       @setClassName()
-      @attributeBindings.pushObjects attr for attr of this when attr.match(/^data-/)?
+      @attributeBindings.pushObject attr for attr of this when attr.match(/^data-/)?
 
     setClassName: ->
       @set 'className', "fb-#{@type}"
