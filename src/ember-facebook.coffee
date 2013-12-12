@@ -53,8 +53,8 @@
             FBUser.set 'accessToken', response.authResponse.accessToken
 
             if @get 'fetchPicture'
-              FB.api '/me/picture', (path) =>
-                FBUser.picture = path
+              FB.api '/me/picture', (response) =>
+                FBUser.picture = response.data.url
                 @set 'FBUser', FBUser
                 @set 'FBloading', false
             else
